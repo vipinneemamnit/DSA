@@ -1,15 +1,13 @@
-//Single LL declaration
-
+#include<iostream>
+using namespace std;
 struct Node{
     int data;
-    Node* next = nullptr;
-    Node(int data){
-        this->data = data;
+    Node* next;
+    Node(int value){
+        this->data = value;
         this->next = nullptr;
-    }
-}
-// LL travesal
-
+    } 
+};
 void traverseLL(Node* head){
     Node* current = head;
     while(current != nullptr){
@@ -22,7 +20,7 @@ void traverseLL(Node* head){
 // Searching in the LL
 bool searchLL(struct Node* head, int target){
     while(head != nullptr){
-        if(head->data == traget) return true;
+        if(head->data == target) return true;
         head = head->next;
     }
     return false;
@@ -89,14 +87,11 @@ Node* insertAtPosition(Node* head, int pos, int value){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+int main(){
+    Node* head = new Node(20);
+    insertAtBeginning(head, 10);
+    insertAtEnd(head, 30);
+    insertAtEnd(head, 40);
+    insertAtEnd(head, 50);
+    traverseLL(head);
+}

@@ -41,6 +41,7 @@ int findLength(Node* head){
 }
 
 
+
 // Insert in LL
 // at beginning
 
@@ -64,3 +65,38 @@ Node* insertAtEnd(Node* head, int value){
     current->next = newNode;
     return head;    
 }
+// insert at specific location
+
+Node* insertAtPosition(Node* head, int pos, int value){
+    if(pos < 1) return head;
+    Node* newNode = new Node(value);
+    if(pos == 1) {
+        newNode->next = head;
+        return newNode;
+    }
+
+    Node* prev = head;
+    int count = 1;
+    while(count < pos -1 && prev != nullptr){
+        prev = prev->next;
+        count++;
+    }
+    if(prev == nullptr) return head;
+
+    newNode->next = prev->next;
+    prev->next = newNode;
+    return head;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

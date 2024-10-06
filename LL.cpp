@@ -89,7 +89,7 @@ Node* insertAtPosition(Node* head, int pos, int value){
 
 int main(){
     Node* head = new Node(20);
-    insertAtBeginning(head, 10);
+    head = insertAtBeginning(head, 10);
     insertAtEnd(head, 30);
     insertAtEnd(head, 40);
     insertAtEnd(head, 50);
